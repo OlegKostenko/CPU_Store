@@ -1,0 +1,15 @@
+﻿@model CPUWS.DAL.Entities.Product
+
+@{
+    ViewBag.Title = "Edit: " + Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit @Model.Name</h2>
+
+@using (Html.BeginForm("Edit", "Admin"))
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Save" />
+    @Html.ActionLink("Cancel and return to List", "Index")
+}
